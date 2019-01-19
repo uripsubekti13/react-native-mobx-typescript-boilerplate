@@ -1,15 +1,10 @@
-import React from "react";
+import * as React from "react";
 import { Component } from "react";
-import {
-  StyleSheet,
-  Text,
-  View,
-  TouchableOpacity,
-  Button
-} from "react-native";
+import { StyleSheet, Text, View, TouchableOpacity, Button } from "react-native";
 import { NavigationScreenProp } from "react-navigation";
 import { observer } from "mobx-react";
 import { observable, action } from "mobx";
+import {} from "native-base";
 
 export interface SettingScreenProps {
   navigation: NavigationScreenProp<any, any>;
@@ -17,16 +12,19 @@ export interface SettingScreenProps {
 
 @observer
 export default class SettingScreen extends Component<SettingScreenProps, any> {
-  @observable title = 'Setting';
+  @observable title = "Setting";
   @action changeTitle = () => {
-    this.title === 'Setting' ? this.title = 'aku title' : this.title = 'Setting';
-  }
+    this.title === "Setting"
+      ? (this.title = "aku title")
+      : (this.title = "Setting");
+  };
 
   render() {
     return (
       <View style={styles.container}>
         <Text style={styles.welcome}>{this.title}</Text>
-        <Button onPress={this.changeTitle} title={'change'}></Button>
+
+        <Button onPress={this.changeTitle} title={"change"} />
         <TouchableOpacity onPress={() => this.props.navigation.pop()}>
           <Text>Go Home</Text>
         </TouchableOpacity>

@@ -1,11 +1,6 @@
-import React from "react";
+import * as React from "react";
 import { Component } from "react";
-import {
-  StyleSheet,
-  Text,
-  View,
-  TouchableOpacity
-} from "react-native";
+import { StyleSheet, Text, View, TouchableOpacity } from "react-native";
 import { NavigationScreenProp } from "react-navigation";
 
 export interface HomeScreenProps {
